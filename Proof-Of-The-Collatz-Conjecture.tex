@@ -99,44 +99,44 @@ splitbottomskip=6pt,splittopskip=12pt]
 \end{lemma}
 	
 \begin{proof}
-    Let first define all positive old integers as, 
+    Let M be any positive odd integer, 
     %
     \begin{equation}
-        M = 2^{s_{1}}.~3^{s_{2}}.~t +1 
+        M = (2^{s_{1}}~3^{s_{2}}~t) +1 
     \end{equation}
     %
     where $s_{1} \in N^{*}$, $s_{2} \in N$, $t \in N $ and $6\nmid t$. Assuming that $s_{1} \geq 2$, let implement the Collatz sequence using $M$.
     \begin{align}
-        E_{1} &= \frac{3M+1}{4}= 2^{s_{1}-2}.~3^{s_{2}+1}.~t + 1
+        E_{1} &= \frac{3M+1}{4}= (2^{s_{1}-2}~3^{s_{2}+ 1}~t) + 1
         \\
-        E_{2} &= \frac{3S_{1}+1}{4} = 4(2^{s_{1}-4}.~3^{s_{2}+2}.~t + 1) 
+        E_{2} &= \frac{3E_{1}+1}{4} = (2^{s_{1}-4}~3^{s_{2}+ 2}~t) + 1 
         \\
-        E_{n} &= \frac{3S_{n-1}+1}{4} = 2^{s_{1}-2n}.~3^{s_{2}+n}.~t + 1
+        E_{n} &= \frac{3E_{n-1}+1}{4} = (2^{s_{1}-2n}~3^{s_{2}+ n}~t) + 1
     \end{align}
     
-    Let assume that $2 \mid s_{1}$. Thus, $ 2 \mid E_{n} \Leftrightarrow  s_{1} = 2n \Rightarrow s_{1} \in N ~/~ 2\mid s_{1} $. Hence, 
+    Let first assume that $2 \mid s_{1}$. Thus, $ 2 \mid E_{n} \text{ if } s_{1} = 2n$. Hence, 
     \begin{equation}
-        E_{\frac{s_{1}}{2}} = 3^{s_{2}+\frac{s_{1}}{2}}.~t + 1 
+        E_{\frac{s_{1}}{2}} = (3^{s_{2}+\frac{s_{1}}{2}}.~t) + 1 
     \end{equation}
     
      Since for $s_{1}\geq 2$, $~2^{s_{1}} > 3^{\frac{s_{1}}{2}}$ then, 
     \begin{align}
         2^{s_{1}}~3^{s_{2}} &> 3^{s_{2}+\frac{s_{1}}{2}} \\
-        2^{s_{1}}~3^{s_{2}}~t+1 &> 3^{s_{2}+\frac{s_{1}}{2}}~t+1 \\
+        (2^{s_{1}}~3^{s_{2}}~t)+1 &> (3^{s_{2}+\frac{s_{1}}{2}}~t)+1 \\
         M &> E_{\frac{s_{1}}{2}}
     \end{align}
-    Therefore, if $2\mid s_{1}$, the collatz sequence will always give an odd positive integer less than the starting value. In other words, $\forall s_{1} \in N^{*}$ such that $2\mid s_{1}$, $2^{s_{1}}.~3^{s_{2}}.~t+1$ is always convergent.\\ 
+    Therefore, if $2\mid s_{1}$, the collatz sequence will always give an odd positive integer less than the starting value. In other words, $\forall s_{1} \in N^{*}$ such that $2\mid s_{1}$, $(2^{s_{1}}~3^{s_{2}}~t)+1$ is always convergent.\\ 
     
-    Now, let assume that $2\nmid s_{1}$. Thus, $s_{1}-2n=1$, which gives
+    Now, let assume that $2\nmid s_{1}$. Thus, $s_{1}-2n=1$ gives
     \begin{equation}
-        E_{\frac{s_{1}-1}{2}} = 2.~3^{s_{2}+\frac{s_{1}-1}{2}}.~t+1
+        E_{\frac{s_{1}-1}{2}} = (2.~3^{s_{2}+\frac{s_{1}-1}{2}}.~t)+1
     \end{equation}
     Since for $s_{1}\geq 2$, ~ $2^{s_{1}}> 2.3^{\frac{s_{1}-1}{2}}$ then,
     \begin{align}
         2^{s_{1}}3^{s_{2}} &> 2.3^{s_{2}+\frac{s_{1}-1}{2}} \\
-        2^{s_{1}}3^{s_{2}}t+1 &> 2.3^{s_{2}+\frac{s_{1}-1}{2}}t+1\\
+        (2^{s_{1}}3^{s_{2}}t)+1 &> (2.~3^{s_{2}+\frac{s_{1}-1}{2}}.~t)+1\\
         M &> E_{\frac{s_{1}-1}{2}}
     \end{align}
-    Therefore, if $2\nmid s_{1}$, the collatz sequence will always give an odd positive integer less than the starting value.Since $ M > E_{\frac{s_{1}-1}{2}}$ implies that $M$ converges to one, then $E_{\frac{s_{1}-1}{2}}$  must also be convergent to one. In other words, all odd positive integers of the form $2^{1}.~3^{m}.~t+1$ are always convergent under the Collatz sequence. Therefore, $\forall s_{1} \in N^{*}$ such that $2\nmid s_{1}$, $2^{s_{1}}.~3^{s_{2}}.~t+1$ is always convergent.\\
+    Therefore, if $2\nmid s_{1}$, the collatz sequence will always give an odd positive integer less than the starting value.Since $ M > E_{\frac{s_{1}-1}{2}}$ implies that $M$ converges to one, then $E_{\frac{s_{1}-1}{2}}$  must also be convergent to one. In other words, all odd positive integers of the form $(2^{1}~3^{m}~t)+1$ are always convergent under the Collatz sequence. Therefore, $\forall s_{1} \in N^{*}$ such that $2\nmid s_{1}$, $(2^{s_{1}}.~3^{s_{2}}.~t)+1$ is always convergent.\\
 \end{proof}
 \end{document}
